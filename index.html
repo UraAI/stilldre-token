@@ -1,0 +1,751 @@
+<!DOCTYPE html>  
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$STILLDRE | Official West Coast Meme Token</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0b0e;
+            --card-bg: #14141a;
+            --accent-gold: #d4af37;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --gold-gradient: linear-gradient(135deg, #fce080 0%, #d4af37 50%, #996515 100%);
+            --text-main: #f0f0f5;
+            --text-muted: #a0a0b0;
+            --border-color: #2a2a35;
+            --font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(11, 11, 14, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: #000;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 800;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px var(--gold-glow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 5% 80px;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--accent-gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, #d0d0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 35px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        /* Music Player Bar */
+        .music-player-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px 30px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .music-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .disc-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            animation: spin 4s linear infinite;
+            animation-play-state: paused;
+        }
+
+        .disc-icon.playing {
+            animation-play-state: running;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .track-details h4 {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .track-details p {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            margin: 0;
+        }
+
+        .play-btn {
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.08);
+        }
+
+        /* Contract Box */
+        .ca-box {
+            background: rgba(20, 20, 26, 0.8);
+            border: 1px dashed var(--accent-gold);
+            border-radius: 12px;
+            padding: 12px 20px;
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .ca-text {
+            font-family: monospace;
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .copy-btn {
+            background: #252530;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--accent-gold);
+            color: #000;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature-item {
+            background: #1a1a24;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .feature-item h4 {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .feature-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Tokenomics */
+        .tokenomics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .tok-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tok-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+        }
+
+        .tok-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .tok-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .tok-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* How to Buy */
+        .buy-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .step-num {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: rgba(212, 175, 55, 0.15);
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--accent-gold);
+        }
+
+        .step-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Code View */
+        .code-container {
+            background: #09090c;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+
+        .code-container pre {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #4af626;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 5%;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: #08080a;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #666;
+            max-width: 800px;
+            margin: 15px auto 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-card { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .music-player-card { flex-direction: column; text-align: center; }
+            .music-info { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav>
+        <div class="logo">🎧 $STILLDRE</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#tokenomics">Tokenomics</a></li>
+            <li><a href="#how-to-buy">How to Buy</a></li>
+            <li><a href="#contract">Contract</a></li>
+        </ul>
+        <a href="#how-to-buy" class="btn-gold">Buy Token</a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-tag">🔥 Official West Coast Meme Token</div>
+        <h1>Still Hit The Block.<br><span>Still Rep The Chain.</span></h1>
+        <p>The legendary West Coast vibe meets decentralized finance. Built for long-term holders who never fold under market pressure.</p>
+
+        <div class="hero-ctas">
+            <a href="https://uniswap.org" target="_blank" class="btn-gold">🚀 Buy $STILLDRE</a>
+            <a href="https://dexscreener.com" target="_blank" class="btn-outline">📊 View Live Chart</a>
+            <a href="https://t.me" target="_blank" class="btn-outline">💬 Telegram</a>
+        </div>
+
+        <!-- Music Player -->
+        <div class="music-player-card">
+            <div class="music-info">
+                <div class="disc-icon" id="disc">🎵</div>
+                <div class="track-details">
+                    <h4 id="track-title">G-Funk West Coast Beat (Interactive)</h4>
+                    <p>Synth Lead & Bass Loop • Click to Vibe</p>
+                </div>
+            </div>
+            <button class="play-btn" id="audioToggle">▶</button>
+        </div>
+
+        <!-- Contract Box -->
+        <div class="ca-box">
+            <span class="ca-text" id="caAddress">0xSTILLDRE77777777777777777777777777777777</span>
+            <button class="copy-btn" onclick="copyCA()">Copy CA</button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-card">
+            <div class="about-text">
+                <h3>Motherf***ers Act Like They Forgot.</h3>
+                <p>$STILLDRE isn't just another temporary pump; it's a culture shift on-chain. Inspired by iconic G-Funk beats, lowriders, and West Coast grit, this token represents relentless strength through every market cycle.</p>
+                <p>When the market dips, doubters panic. We hit the hydraulic switch and bounce right back up.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h4>0% Buy / Sell Tax</h4>
+                    <p>Pure trading with zero extra fees.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>100% Fixed Supply</h4>
+                    <p>1 Billion tokens minted. Zero mint function.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Retained Ownership</h4>
+                    <p>Active leadership to drive ongoing hype.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Burn Mechanism</h4>
+                    <p>Native ability to trim overall token supply.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics">
+        <div class="section-title">
+            <h2>Tokenomics</h2>
+            <p>Transparent and community-first distribution framework.</p>
+        </div>
+        <div class="tokenomics-grid">
+            <div class="tok-card">
+                <div class="tok-number">1B</div>
+                <div class="tok-label">Total Supply</div>
+                <div class="tok-desc">1,000,000,000 $STILLDRE max supply</div>
+            </div>
+            <div class="tok-card">
+                <div class="tok-number">85%</div>
+                <div class="tok-label">Liquidity Pool</div>
+                <div class="tok-desc">Locked for community trading safety</div>
+            </div>
+            <div class="tok-card">
+                <div class="tok-number">10%</div>
+                <div class="tok-label">Marketing & Raids</div>
+                <div class="tok-desc">For ongoing promotions & marketing</div>
+            </div>
+            <div class="tok-card">
+                <div class="tok-number">5%</div>
+                <div class="tok-label">CEX Listings</div>
+                <div class="tok-desc">Reserved for central exchange listings</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Buy -->
+    <section id="how-to-buy">
+        <div class="section-title">
+            <h2>How To Buy</h2>
+            <p>Get ready in 4 easy steps to join the West Coast movement.</p>
+        </div>
+        <div class="buy-steps">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <h3>Create Wallet</h3>
+                <p>Download MetaMask or Phantom from their official stores or browser extensions.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">02</div>
+                <h3>Fund Wallet</h3>
+                <p>Buy ETH or SOL from an exchange and send it directly to your wallet address.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <h3>Connect DEX</h3>
+                <p>Open Uniswap, Raydium, or Jupiter and connect your Web3 wallet.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">04</div>
+                <h3>Swap & Hold</h3>
+                <p>Paste the $STILLDRE CA, confirm your swap transaction, and hold heavy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Code Section -->
+    <section id="contract">
+        <div class="section-title">
+            <h2>Smart Contract Source</h2>
+            <p>Verified OpenZeppelin standard ERC-20 implementation.</p>
+        </div>
+        <div class="code-container">
+<pre><code>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract StillDRE is ERC20, ERC20Burnable, Ownable {
+    uint256 private constant INITIAL_SUPPLY = 1_000_000_000 * 10**18;
+
+    constructor() ERC20("Still D.R.E.", "STILLDRE") Ownable(msg.sender) {
+        _mint(msg.sender, INITIAL_SUPPLY);
+    }
+
+    function ownerBurn(uint256 amount) external onlyOwner {
+        _burn(msg.sender, amount);
+    }
+}</code></pre>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 $STILLDRE Community. All rights reserved.</p>
+        <p class="disclaimer">Disclaimer: $STILLDRE is a community meme coin created for entertainment purposes. Cryptocurrency investments carry financial risk. Conduct your own research.</p>
+    </footer>
+
+    <!-- Web Audio API & Interactivity JavaScript -->
+    <script>
+        function copyCA() {
+            const caText = document.getElementById('caAddress').innerText;
+            navigator.clipboard.writeText(caText);
+            alert('Contract address copied!');
+        }
+
+        let audioCtx = null;
+        let isPlaying = false;
+        let beatInterval = null;
+
+        const toggleBtn = document.getElementById('audioToggle');
+        const discIcon = document.getElementById('disc');
+        const trackTitle = document.getElementById('track-title');
+
+        toggleBtn.addEventListener('click', function() {
+            if (!isPlaying) {
+                startGFunkBeat();
+                toggleBtn.innerText = '⏸';
+                discIcon.classList.add('playing');
+                trackTitle.innerText = 'G-Funk West Coast Beat (Playing 🎶)';
+                isPlaying = true;
+            } else {
+                stopGFunkBeat();
+                toggleBtn.innerText = '▶';
+                discIcon.classList.remove('playing');
+                trackTitle.innerText = 'G-Funk West Coast Beat (Paused)';
+                isPlaying = false;
+            }
+        });
+
+        function startGFunkBeat() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            let step = 0;
+            const whistleNotes = [1174.66, 1318.51, 1567.98, 1318.51, 1174.66, 987.77, 1174.66, 1318.51];
+            const bassNotes = [110, 110, 146.83, 130.81];
+
+            beatInterval = setInterval(() => {
+                const now = audioCtx.currentTime;
+
+                // Kick
+                if (step % 4 === 0 || step % 16 === 10) {
+                    let kick = audioCtx.createOscillator();
+                    let kickGain = audioCtx.createGain();
+                    kick.frequency.setValueAtTime(150, now);
+                    kick.frequency.exponentialRampToValueAtTime(0.01, now + 0.15);
+                    kickGain.gain.setValueAtTime(0.8, now);
+                    kickGain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+                    kick.connect(kickGain);
+                    kickGain.connect(audioCtx.destination);
+                    kick.start(now);
+                    kick.stop(now + 0.15);
+                }
+
+                // Whistle Lead
+                if (step % 2 === 0) {
+                    let whistle = audioCtx.createOscillator();
+                    let whistleGain = audioCtx.createGain();
+                    whistle.type = 'sine';
+                    let note = whistleNotes[(step / 2) % whistleNotes.length];
+                    whistle.frequency.setValueAtTime(note, now);
+                    whistleGain.gain.setValueAtTime(0.12, now);
+                    whistleGain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+                    whistle.connect(whistleGain);
+                    whistleGain.connect(audioCtx.destination);
+                    whistle.start(now);
+                    whistle.stop(now + 0.35);
+                }
+
+                // Bassline
+                if (step % 4 === 0) {
+                    let bass = audioCtx.createOscillator();
+                    let bassGain = audioCtx.createGain();
+                    bass.type = 'sawtooth';
+                    let bassNote = bassNotes[(step / 4) % bassNotes.length];
+                    bass.frequency.setValueAtTime(bassNote, now);
+                    bassGain.gain.setValueAtTime(0.2, now);
+                    bassGain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+                    bass.connect(bassGain);
+                    bassGain.connect(audioCtx.destination);
+                    bass.start(now);
+                    bass.stop(now + 0.4);
+                }
+
+                step = (step + 1) % 16;
+            }, 180);
+        }
+
+        function stopGFunkBeat() {
+            if (beatInterval) {
+                clearInterval(beatInterval);
+                beatInterval = null;
+            }
+        }
+    </script>
+</body>
+</html>
